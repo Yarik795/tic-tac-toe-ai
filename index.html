@@ -9,9 +9,41 @@
 <body>
     <div class="container">
         <h1>Крестики-Нолики</h1>
+        <div class="game-settings">
+            <div class="setting-group">
+                <label for="difficulty">Уровень сложности:</label>
+                <select id="difficulty" class="difficulty-select">
+                    <option value="easy">Лёгкий</option>
+                    <option value="medium" selected>Средний</option>
+                    <option value="hard">Сложный</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="board-size">Размер поля:</label>
+                <select id="board-size" class="board-size-select">
+                    <option value="3">3×3</option>
+                    <option value="4">4×4</option>
+                </select>
+            </div>
+            <div class="setting-group">
+                <label for="timer-toggle" class="timer-label">
+                    <input type="checkbox" id="timer-toggle" class="timer-checkbox">
+                    Таймер (10 сек)
+                </label>
+            </div>
+        </div>
         <div class="game-info">
             <div id="status">Ваш ход! Вы играете крестиками (X)</div>
-            <button id="reset-btn" class="reset-btn">Новая игра</button>
+            <div id="timer-container" class="timer-container" style="display: none;">
+                <div class="timer-bar">
+                    <div id="timer-progress" class="timer-progress"></div>
+                </div>
+                <span id="timer-text" class="timer-text">10</span>
+            </div>
+            <div class="game-controls">
+                <button id="reset-btn" class="reset-btn">Новая игра</button>
+                <button id="theme-toggle" class="theme-toggle">🌙 Тёмная тема</button>
+            </div>
         </div>
         <div class="game-board">
             <div class="cell" data-index="0"></div>
